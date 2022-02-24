@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_list_users">
+            <field name="name">User List</field>
+            <field name="res_model">open_academy.users</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_users" parent="menu_open_academy" name="Users" sequence="3" action="action_list_users" />
+
+        <record model="ir.ui.view" id="open_academy_users_tree">
+            <field name="name">Users List</field>
+            <field name="model">open_academy.users</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="open_academy_users_view_form">
+            <field name="name">open_academy.users.view.form</field>
+            <field name="model">open_academy.users</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <form string="users form">
+                    <header></header>
+                    <sheet>
+                        <group >
+                            <group >
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

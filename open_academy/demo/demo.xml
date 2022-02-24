@@ -1,11 +1,16 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="open_academy.open_academy">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+
+          <record id="open_academy_react" model="open.academy">
+            <field name="name">Curso de React</field>
+            <field name="description">Aprende React en este curso para ti.</field>
           </record>
 
+          <record id="open_academy_odoo" model="open.academy">
+            <field name="name">Curso de Odoo</field>
+            <field name="description">Aprende Odoo en este curso para ti.</field>
+          </record>
+<!--
           <record id="object1" model="open_academy.open_academy">
             <field name="name">Object 1</field>
             <field name="value">10</field>

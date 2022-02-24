@@ -1,6 +1,5 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
+
 <!--
     <record model="ir.ui.view" id="open_academy.list">
       <field name="name">open_academy list</field>
@@ -56,5 +55,5 @@
     <menuitem name="Server to list" id="open_academy" parent="open_academy.menu_2"
               action="open_academy.action_server"/>
 -->
-  </data>
+  
 </odoo>

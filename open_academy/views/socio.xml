@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_list_partner">
+            <field name="name">Partner List</field>
+            <field name="res_model">open_academy.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_partner" parent="menu_open_academy" name="Partner" sequence="4" action="action_list_partner" />
+
+        <record model="ir.ui.view" id="open_academy_partner_tree">
+            <field name="name">Partnerlist</field>
+            <field name="model">open_academy.partner</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="instructor"/>
+                    <field name="sessions"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="open_academy_partner_view_form">
+            <field name="name">open_academy.partner.view.form</field>
+            <field name="model">open_academy.partner</field>
+            <field name="inherit_id" ref="open_academy_sessions_tree"/>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='field_many2one']" position="inside">
+                    <group >
+                        <group >
+                            <field name="name"/>
+                        </group>
+
+                        <group >
+                            <field name="instructor"/>
+                        </group>
+
+                        <group >
+                            <field name="sessions"/>
+                        </group>
+
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

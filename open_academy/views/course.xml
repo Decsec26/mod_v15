@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="action_list_course">
+            <field name="name">Courses</field>
+            <field name="res_model">open_academy.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_open_academy" name="OpenAcademy" sequence="10" />
+        <menuitem id="menu_course" name="Courses" parent="menu_open_academy" sequence="1" action="action_list_course" />
+        
+        <record model="ir.ui.view" id="open_academy_course_tree">
+            <field name="name">Course list</field>
+            <field name="model">open_academy.course</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="title"/>
+                    <field name="usuario"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="open_academy_course_view_form">
+            <field name="name">open_academy.course.view.form</field>
+            <field name="model">open_academy.course</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <form string="Idea form">
+                    <header></header>
+                    <sheet>
+                        <group >
+                            <group >
+                                <field name="name"/>
+                            </group>
+
+                            <group >
+                                <field name="title"/>
+                            </group>
+
+                            <group >
+                                <field name="usuario"/>
+                            </group>
+
+                            <notebook>
+                                <page string="Description" name="description">
+                                    <field name="description" placeholder="una breve descripcion"/>
+                                </page>
+                            </notebook>
+
+                        </group>
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="open_academy_course_view_search">
+            <field name="name">open_academy.course.view.search</field>
+            <field name="model">open_academy.course</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+
+        
+
+    </data>       
+</odoo>
